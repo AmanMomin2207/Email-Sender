@@ -42,10 +42,10 @@
     "ioredis": "^5.9.2",
     "lucide-react": "^0.562.0",
     "multer": "^2.0.2",
-    "mysql2": "^3.16.1",
     "nodemailer": "^7.0.12",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
+    "pg": "^8.17.2",
     "prisma": "^5.22.0",
     "react-router-dom": "^7.12.0",
     "redis-memory-server": "^0.14.1"

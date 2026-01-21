@@ -9,7 +9,7 @@ import { useAuth } from '../hooks/useAuth';
 import { Plus } from 'lucide-react';
 
 const Dashboard: React.FC = () => {
-    const { data: user, isLoading: authLoading } = useAuth();
+    const { data: user } = useAuth();
     const [activeTab, setActiveTab] = useState<'scheduled' | 'sent'>('scheduled');
     const [isComposeOpen, setIsComposeOpen] = useState(false);
 
@@ -23,8 +23,7 @@ const Dashboard: React.FC = () => {
         enabled: !!user,
     });
 
-    if (authLoading) return <div className="flex justify-center items-center h-screen">Loading...</div>;
-    if (!user) return <div>Access Denied</div>;
+    if (!user) return null; // Should be handled by ProtectedRoute, but satisfies TS
 
     return (
         <div className="bg-gray-50 min-h-screen">
