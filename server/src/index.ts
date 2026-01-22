@@ -23,19 +23,20 @@ startRedisServer().then(() => {
 });
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: process.env.CLIENT_URL!,
     credentials: true
 }));
 app.use(json());
 
 // Session config
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'secret',
+    secret: process.env.SESSION_SECRET!,
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: false, // Set to true if using HTTPS
-        maxAge: 24 * 60 * 60 * 1000
+        maxAge: 24 * 60 * 60 * 1000,
+        sameSite: "none"
     }
 }));
 
@@ -44,6 +45,7 @@ app.use(passport.session());
 
 app.get('/', (req, res) => {
     res.send('Email Scheduler API is running');
+    res.redirect(process.env.CLIENT_URL!);
 });
 
 app.use('/api/auth', authRoutes);
