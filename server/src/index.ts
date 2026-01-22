@@ -84,6 +84,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET!,
   resave: false,
   saveUninitialized: false,
+  name: "sid", // optional but recommended
   cookie: {
     secure: true,        // ✅ HTTPS
     sameSite: "none",    // ✅ cross-domain
