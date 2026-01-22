@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# env
+.env
+.env.local
+.env.production
+
+# prisma
+prisma/dev.db
+prisma/*.db
+prisma/*.db-journal
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# build
+dist/
+build/
+
+# cache
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# coverage
+coverage/
