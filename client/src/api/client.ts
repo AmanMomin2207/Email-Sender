@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API_URL = 'https://email-senderbaoq.onrender.com';
+export const API_URL = 'https://email-sender-backend-bzlv.onrender.com';
 
 const api = axios.create({
     baseURL: `${API_URL}/api`,
