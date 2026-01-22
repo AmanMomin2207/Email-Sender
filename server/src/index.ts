@@ -79,6 +79,8 @@ app.use(cors({
 
 app.use(json());
 
+app.set("trust proxy", 1); // REQUIRED for Render
+
 // Session (REQUIRED for Google OAuth)
 app.use(session({
   secret: process.env.SESSION_SECRET!,
@@ -88,7 +90,7 @@ app.use(session({
   cookie: {
     secure: true,        // ✅ HTTPS
     sameSite: "none",    // ✅ cross-domain
-    maxAge: 24 * 60 * 60 * 1000,
+    httpOnly: true,
   },
 }));
 
